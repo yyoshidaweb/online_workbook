@@ -5,6 +5,42 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	</head>
 	<body>
-		<h1>問題集一覧</h1>
+		<header>
+			<h1>問題集一覧</h1>
+			<form th:action="@{/}">
+				<button type="submit">問題集を追加</button>
+			</form>
+		</header>
+		<hr/>
+		<main>
+			<table>
+				<tr>
+					<td><a href="/">問題集1</a></td>
+					<td>
+						<form th:action="@{/}">
+							<button type="submit">購入</button>
+						</form>
+					</td>
+					<td>
+						<form th:action="@{/}">
+							<button type="submit">編集</button>
+						</form>
+					</td>
+				</tr>
+				<tr>
+					<td><a href="/">問題集２</a></td>
+					<td>
+						<form th:action="@{/}">
+							<button type="submit" disabled>購入済</button>
+						</form>
+					</td>
+					<td>
+						<form th:action="@{/}">
+							<button type="submit">編集</button>
+						</form>
+					</td>
+				</tr>
+			</table>
+		</main>
 	</body>
 </html>
