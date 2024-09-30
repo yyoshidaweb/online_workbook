@@ -23,4 +23,14 @@ public class WorkbookService {
 	public List<Workbook> findAll() {
 		return workbookMapper.findAll();
 	}
+	
+	/**
+	 * 問題集作成を実行する
+	 * @param workbook
+	 */
+	@Transactional
+	public void save(Workbook workbook) {
+		System.out.println(workbook);
+		workbookMapper.save(workbook);
+	}
 }
