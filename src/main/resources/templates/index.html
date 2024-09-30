@@ -14,24 +14,12 @@
 		<hr/>
 		<main>
 			<table>
-				<tr>
-					<td><a href="/">問題集1</a></td>
+				<tr th:each="workbook : ${workbookList}" th:object="${workbook}">
+					<td><a href="/" th:text="*{title}"></a></td>
+					<td><p th:text="*{price} + '円'"></p></td>
 					<td>
 						<form th:action="@{/}">
 							<button type="submit">購入</button>
-						</form>
-					</td>
-					<td>
-						<form th:action="@{/}">
-							<button type="submit">編集</button>
-						</form>
-					</td>
-				</tr>
-				<tr>
-					<td><a href="/">問題集２</a></td>
-					<td>
-						<form th:action="@{/}">
-							<button type="submit" disabled>購入済</button>
 						</form>
 					</td>
 					<td>
