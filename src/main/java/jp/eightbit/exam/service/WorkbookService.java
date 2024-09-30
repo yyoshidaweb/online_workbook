@@ -25,6 +25,16 @@ public class WorkbookService {
 	}
 	
 	/**
+	 * idを基に問題集を1つ取得する
+	 * @param id
+	 * @return
+	 */
+	@Transactional
+	public Workbook findOne(Integer id) {
+		return workbookMapper.findOne((long)id);
+	}
+	
+	/**
 	 * 問題集作成を実行する
 	 * @param workbook
 	 */

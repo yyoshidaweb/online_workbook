@@ -29,6 +29,14 @@ public class WorkbookController {
 		return "index";
 	}
 	
+	@GetMapping("/workbook/{id}")
+	public String showWorkbook(@PathVariable(name = "id") Integer id, Model model) {
+		Workbook workbook = workbookService.findOne(id);
+		model.addAttribute("workbook", workbook);
+		System.out.println(model.getAttribute("workbook"));
+		return "workbookShow";
+	}
+	
 	/**
 	 * 問題集作成ページを表示する
 	 * @param model
