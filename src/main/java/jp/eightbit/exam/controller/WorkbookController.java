@@ -11,9 +11,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestAttribute;
-import org.springframework.web.bind.annotation.RequestParam;
-
 import jp.eightbit.exam.entity.Workbook;
 import jp.eightbit.exam.service.WorkbookService;
 
@@ -22,6 +19,11 @@ public class WorkbookController {
 	@Autowired
 	WorkbookService workbookService;
 
+	/**
+	 * 問題集一覧ページを表示する。
+	 * @param model
+	 * @return
+	 */
 	@GetMapping("/")
 	public String index(Model model) {
 		List<Workbook> workbookList = workbookService.findAll();
@@ -29,11 +31,16 @@ public class WorkbookController {
 		return "index";
 	}
 	
+	/**
+	 * 問題集詳細ページを表示する。
+	 * @param id
+	 * @param model
+	 * @return
+	 */
 	@GetMapping("/workbook/{id}")
 	public String showWorkbook(@PathVariable(name = "id") Integer id, Model model) {
 		Workbook workbook = workbookService.findOne(id);
 		model.addAttribute("workbook", workbook);
-		System.out.println(model.getAttribute("workbook"));
 		return "workbookShow";
 	}
 	
@@ -77,6 +84,14 @@ public class WorkbookController {
 		return "workbookEdit";
 	}
 	
+	/**
+	 * 問題集編集を実行する
+	 * @param id
+	 * @param workbook
+	 * @param result
+	 * @param model
+	 * @return
+	 */
 	@PostMapping("workbook/update/{id}")
 	public String update(@PathVariable(name = "id") Long id, @ModelAttribute("workbook") @Validated Workbook workbook, BindingResult result, Model model) {
 		if (result.hasErrors()) {
@@ -87,5 +102,16 @@ public class WorkbookController {
 			workbookService.update(workbook);
 			return "redirect:/";
 		}
+	}
+	
+	/**
+	 * 問題集を削除する
+	 * @param id
+	 * @return
+	 */
+	@PostMapping("workbook/delete/{id}")
+	public String delete(@PathVariable(name = "id") Long id) {
+		workbookService.delete(id);
+		return "redirect:/";
 	}
 }

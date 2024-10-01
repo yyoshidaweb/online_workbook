@@ -51,4 +51,13 @@ public class WorkbookService {
 	public void update(Workbook workbook) {
 		workbookMapper.update(workbook);
 	}
+	
+	/**
+	 * 問題集を削除する
+	 * @param id
+	 */
+	@Transactional
+	public void delete(Long id) {
+		workbookMapper.delete(id);
+	}
 }

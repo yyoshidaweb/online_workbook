@@ -25,6 +25,11 @@
 							<button>編集</button>
 						</a>
 					</td>
+					<td>
+						<form th:action="@{workbook/delete/{id}(id=*{id})}" th:method="post">
+							<button type="submit">削除</button>
+						</form>
+					</td>
 				</tr>
 			</table>
 		</main>
