@@ -49,7 +49,6 @@ public class WorkbookService {
 	 */
 	@Transactional
 	public void update(Workbook workbook) {
-		System.out.println(workbook);
-//		workbookMapper.update(workbook);
+		workbookMapper.update(workbook);
 	}
 }

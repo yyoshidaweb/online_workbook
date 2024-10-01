@@ -76,4 +76,16 @@ public class WorkbookController {
 		model.addAttribute("workbook", workbook);
 		return "workbookEdit";
 	}
+	
+	@PostMapping("workbook/update/{id}")
+	public String update(@PathVariable(name = "id") Long id, @ModelAttribute("workbook") @Validated Workbook workbook, BindingResult result, Model model) {
+		if (result.hasErrors()) {
+			model.addAttribute("workbook", workbook);
+			return "workbookEdit";
+		} else {
+			workbook.setId(id);
+			workbookService.update(workbook);
+			return "redirect:/";
+		}
+	}
 }

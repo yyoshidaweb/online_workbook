@@ -10,7 +10,7 @@
 		</header>
 		<hr/>
 		<main>
-			<form th:action="@{/workbook/update}" th:object="${workbook}" th:method="post">
+			<form th:action="@{/workbook/update/{id}(id=*{id})}" th:object="${workbook}" th:method="post">
 				<table>
 					<tr>
 						<td>
