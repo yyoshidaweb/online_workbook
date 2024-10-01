@@ -40,7 +40,16 @@ public class WorkbookService {
 	 */
 	@Transactional
 	public void save(Workbook workbook) {
-		System.out.println(workbook);
 		workbookMapper.save(workbook);
+	}
+	
+	/**
+	 * 問題集編集を実行する。
+	 * @param workbook
+	 */
+	@Transactional
+	public void update(Workbook workbook) {
+		System.out.println(workbook);
+//		workbookMapper.update(workbook);
 	}
 }

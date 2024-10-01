@@ -63,4 +63,17 @@ public class WorkbookController {
 		      return "redirect:/";
 		    }
 	}
+	
+	/**
+	 * 問題集編集ページを表示する
+	 * @param id
+	 * @param model
+	 * @return
+	 */
+	@GetMapping("workbook/edit/{id}")
+	public String edit(@PathVariable(name = "id") Integer id, Model model) {
+		Workbook workbook = workbookService.findOne(id);
+		model.addAttribute("workbook", workbook);
+		return "workbookEdit";
+	}
 }

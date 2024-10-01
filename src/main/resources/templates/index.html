@@ -21,9 +21,9 @@
 						</form>
 					</td>
 					<td>
-						<form th:action="@{/}">
-							<button type="submit">編集</button>
-						</form>
+						<a th:href="@{workbook/edit/{id}(id=*{id})}">
+							<button>編集</button>
+						</a>
 					</td>
 				</tr>
 			</table>
