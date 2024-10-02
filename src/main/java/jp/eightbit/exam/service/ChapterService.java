@@ -33,4 +33,9 @@ public class ChapterService {
 	public Chapter findOne(Integer workbookId, Integer id) {
 		return chapterMapper.findOne((long)workbookId, (long)id);
 	}
+	
+	@Transactional
+	public void save(Chapter chapter) {
+		chapterMapper.save(chapter);
+	}
 }

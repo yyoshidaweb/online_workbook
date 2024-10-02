@@ -6,12 +6,12 @@
 	</head>
 	<body>
 		<header>
-			<h1>章作成</h1>
-			<h2 th:text="${workbook.title}"></h2>
+			<h1 th:text="${workbook.title}"></h1>
+			<h2>章作成</h2>
 		</header>
 		<hr/>
 		<main>
-			<form th:object="${chapter}">
+			<form th:action="@{/chapter/createExecute}" th:object="${chapter}" th:method="post">
 				<table>
 					<tr>
 						<td>
@@ -19,6 +19,7 @@
 								章番号
 								<input type="text" th:field="*{number}" />
 							</label>
+							<p th:if="${#fields.hasErrors('number')}" th:errors="*{number}"></p>
 						</td>
 					</tr>
 					<tr>
@@ -27,15 +28,18 @@
 								章タイトル
 								<input type="text" th:field="*{name}" />
 							</label>
+							<p th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></p>
 						</td>
 					</tr>
 					<tr>
 						<td>
+							<input type="hidden" th:field="*{workbookId}">
 							<button type="submit">作成</button>
 						</td>
 					</tr>
 				</table>
 			</form>
+			<a th:href="@{/workbook/{id}(id=${workbook.id})}">問題集詳細に戻る</a>
 		</main>
 	</body>
 </html>
