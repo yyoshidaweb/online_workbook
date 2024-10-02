@@ -7,7 +7,7 @@
 	<body>
 		<header>
 			<h1 th:text=${workbook.title}></h1>
-			<a href="/"><button>章を追加</button></a>
+			<a th:href="@{/workbook/{id}/chapter/create(id=${workbook.id})}"><button>章を追加</button></a>
 		</header>
 		<hr/>
 		<main>
