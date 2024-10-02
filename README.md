@@ -22,7 +22,7 @@ CREATE TABLE IF NOT EXISTS workbook (
 CREATE TABLE IF NOT EXISTS chapter (
   id bigint(20) NOT NULL AUTO_INCREMENT,
   number int,
-  title varchar(255),
+  name varchar(255),
   workbook_id bigint(20),
   foreign key (workbook_id) references workbook(id) on delete cascade on update cascade,
   PRIMARY KEY (id)

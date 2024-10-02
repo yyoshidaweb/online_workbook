@@ -12,7 +12,14 @@
 		<hr/>
 		<main>
 			<table>
-				
+				<tr th:each="chapter : ${chapterList}" th:object="${chapter}">
+					<td>
+						<p th:text="*{number} + '章：'"></p>
+					</td>
+					<td>
+						<a href="/" th:text="*{name}"></a>
+					</td>
+				</tr>
 			</table>
 		</main>
 	</body>

@@ -11,13 +11,19 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+
+import jp.eightbit.exam.entity.Chapter;
 import jp.eightbit.exam.entity.Workbook;
+import jp.eightbit.exam.service.ChapterService;
 import jp.eightbit.exam.service.WorkbookService;
 
 @Controller
 public class WorkbookController {
 	@Autowired
 	WorkbookService workbookService;
+	
+	@Autowired
+	ChapterService chapterService;
 
 	/**
 	 * 問題集一覧ページを表示する。
@@ -40,7 +46,10 @@ public class WorkbookController {
 	@GetMapping("/workbook/{id}")
 	public String showWorkbook(@PathVariable(name = "id") Integer id, Model model) {
 		Workbook workbook = workbookService.findOne(id);
+		List<Chapter> chapterList = chapterService.findAll(id);
 		model.addAttribute("workbook", workbook);
+		model.addAttribute("chapterList", chapterList);
+		System.out.println(model.getAttribute("chapterList"));
 		return "workbookShow";
 	}
 	

@@ -6,7 +6,7 @@
   </select>
 
   <select id="findOne" resultType="jp.eightbit.exam.entity.Workbook">
-    select * from workbook where id= #{id}
+    select * from workbook where id = #{id}
   </select>
 
   <insert id="save" useGeneratedKeys="true" keyProperty="id">
