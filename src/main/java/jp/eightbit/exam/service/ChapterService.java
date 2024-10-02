@@ -34,8 +34,22 @@ public class ChapterService {
 		return chapterMapper.findOne((long)workbookId, (long)id);
 	}
 	
+	/**
+	 * 章の作成を実行する
+	 * @param chapter
+	 */
 	@Transactional
 	public void save(Chapter chapter) {
 		chapterMapper.save(chapter);
+	}
+	
+	/**
+	 * 章の編集を実行する
+	 * @param chapter
+	 */
+	@Transactional
+	public void update(Chapter chapter) {
+		System.out.println(chapter);
+//		chapterMapper.update(chapter);
 	}
 }

@@ -62,7 +62,7 @@ public class ChapterController {
 	 * @return
 	 */
 	@PostMapping("/chapter/createExecute")
-	public String createExecuteString(@ModelAttribute("chapter") @Validated Chapter chapter, BindingResult result, @ModelAttribute("workbook") Workbook workbook, Model model) {
+	public String createExecute(@ModelAttribute("chapter") @Validated Chapter chapter, BindingResult result, @ModelAttribute("workbook") Workbook workbook, Model model) {
 		if (result.hasErrors()) {
 			return "chapterCreate";
 		} else {
@@ -70,5 +70,14 @@ public class ChapterController {
 			String workbookIdString = chapter.getWorkbookId().toString();
 			return "redirect:/workbook/" + workbookIdString;
 		}
+	}
+	
+	@GetMapping("/workbook/{workbookId}/{id}/edit")
+	public String editChapter(@PathVariable(name = "workbookId") Integer workbookId, @PathVariable(name = "id") Integer id, Model model) {
+		Workbook workbook = workbookService.findOne(workbookId);
+		Chapter chapter = chapterService.findOne(workbookId, id);
+		model.addAttribute("workbook", workbook);
+		model.addAttribute("chapter", chapter);
+		return "chapterEdit";
 	}
 }
