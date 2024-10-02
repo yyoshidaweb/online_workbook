@@ -15,6 +15,8 @@ public class Chapter {
 	
 	@NotBlank(message = "章の名前を入力してください。")
 	private String name;
+	
+	private Long workbookId;
 
 	public Long getId() {
 		return id;
@@ -40,8 +42,18 @@ public class Chapter {
 		this.name = name;
 	}
 
+	public Long getWorkbookId() {
+		return workbookId;
+	}
+
+	public void setWorkbookId(Long workbookId) {
+		this.workbookId = workbookId;
+	}
+
 	@Override
 	public String toString() {
-		return "Chapter [id=" + id + ", number=" + number + ", name=" + name + "]";
+		return "Chapter [id=" + id + ", number=" + number + ", name=" + name + ", workbookId=" + workbookId + "]";
 	}
+
+	
 }

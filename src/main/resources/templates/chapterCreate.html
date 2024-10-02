@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<title>章作成</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	</head>
+	<body>
+		<header>
+			<h1>章作成</h1>
+			<h2 th:text="${workbook.title}"></h2>
+		</header>
+		<hr/>
+		<main>
+			<form th:object="${chapter}">
+				<table>
+					<tr>
+						<td>
+							<label>
+								章番号
+								<input type="text" th:field="*{number}" />
+							</label>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<label>
+								章タイトル
+								<input type="text" th:field="*{name}" />
+							</label>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<button type="submit">作成</button>
+						</td>
+					</tr>
+				</table>
+			</form>
+		</main>
+	</body>
+</html>

@@ -10,7 +10,7 @@
   </select>
 
   <insert id="save" useGeneratedKeys="true" keyProperty="id">
-    insert into chapter(number, name) values(#{number}, #{name})
+    insert into chapter(number, name, workbook_id) values(#{number}, #{name}, #{workbookId)
   </insert>
 
   <update id="update">
