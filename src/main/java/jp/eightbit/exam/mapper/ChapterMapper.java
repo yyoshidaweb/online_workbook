@@ -3,6 +3,7 @@ package jp.eightbit.exam.mapper;
 import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 
 import jp.eightbit.exam.entity.Chapter;
 
@@ -10,7 +11,7 @@ import jp.eightbit.exam.entity.Chapter;
 public interface ChapterMapper {
 	List<Chapter> findAll(Long workbookId);
 	
-	Chapter findOne(Long id);
+	Chapter findOne(@Param("workbookId") Long workbookId, @Param("id") Long id);
 	
 	void save(Chapter chapter);
 	

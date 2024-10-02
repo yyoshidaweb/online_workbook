@@ -14,8 +14,23 @@ public class ChapterService {
 	@Autowired
 	private ChapterMapper chapterMapper;
 	
+	/**
+	 * 問題集のidに紐づく章を全て取得する
+	 * @param workbookId
+	 * @return
+	 */
 	@Transactional
 	public List<Chapter> findAll(Integer workbookId) {
 		return chapterMapper.findAll((long)workbookId);
+	}
+	
+	/**
+	 * 章のidを基に章を一つ取得する。
+	 * @param id
+	 * @return
+	 */
+	@Transactional
+	public Chapter findOne(Integer workbookId, Integer id) {
+		return chapterMapper.findOne((long)workbookId, (long)id);
 	}
 }

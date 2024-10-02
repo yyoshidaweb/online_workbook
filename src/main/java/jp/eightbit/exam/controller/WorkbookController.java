@@ -49,7 +49,6 @@ public class WorkbookController {
 		List<Chapter> chapterList = chapterService.findAll(id);
 		model.addAttribute("workbook", workbook);
 		model.addAttribute("chapterList", chapterList);
-		System.out.println(model.getAttribute("chapterList"));
 		return "workbookShow";
 	}
 	
