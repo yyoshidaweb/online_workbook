@@ -20,8 +20,6 @@ public class ChapterController {
 	public String showChapter(@PathVariable(name = "workbookId") Integer workbookId, @PathVariable(name = "id") Integer id, Model model) {
 		Chapter chapter = chapterService.findOne(workbookId, id);
 		model.addAttribute("chapter", chapter);
-		System.out.println(model.getAttribute("chapter"));
-
 		return "chapterShow";
 	}
 }
