@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<title>章編集</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	</head>
+	<body>
+		<header>
+			<h1 th:text="${workbook.title}"></h1>
+			<h2>章編集</h2>
+		</header>
+		<hr/>
+		<main>
+			<form th:action="@{/chapter/update/{id}(id=*{id})}" th:object="${chapter}" th:method="post">
+				<table>
+					<tr>
+						<td>
+							<label>
+								章番号
+								<input type="text" th:field="*{number}" />
+							</label>
+							<p th:if="${#fields.hasErrors('number')}" th:errors="*{number}"></p>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<label>
+								章タイトル
+								<input type="text" th:field="*{name}" />
+							</label>
+							<p th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></p>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<input type="hidden" th:field="${workbook.id}" />
+							<button type="submit">変更</button>
+						</td>
+					</tr>
+				</table>
+			</form>
+			<a th:href="@{/workbook/{id}(id=${workbook.id})}">問題集に戻る</a>
+		</main>
+	</body>
+</html>

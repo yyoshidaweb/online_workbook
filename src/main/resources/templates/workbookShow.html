@@ -7,13 +7,30 @@
 	<body>
 		<header>
 			<h1 th:text=${workbook.title}></h1>
-			<a href="/"><button>章を追加</button></a>
+			<a th:href="@{/workbook/{id}/chapter/create(id=${workbook.id})}"><button>章を追加</button></a>
 		</header>
 		<hr/>
 		<main>
 			<table>
-				
+				<tr th:each="chapter : ${chapterList}" th:object="${chapter}">
+					<td>
+						<p th:text="*{number} + '章：'"></p>
+					</td>
+					<td>
+						<a th:href="@{/workbook/{workbookId}/{id}(workbookId=${workbook.id}, id=*{id})}" th:text="*{name}"></a>
+					</td>
+					<td>
+						<a th:href="@{/workbook/{workbookId}/{id}/edit(workbookId=${workbook.id}, id=*{id})}"><button>編集</button></a>
+					</td>
+					<td>
+						<form th:action="@{/chapter/delete/{id}(id=*{id})}" th:method="post">
+							<input type="hidden" th:field="${workbook.id}" />
+							<button type="submit">削除</button>						
+						</form>
+					</td>
+				</tr>
 			</table>
+			<a href="/">問題集一覧に戻る</a>
 		</main>
 	</body>
 </html>
