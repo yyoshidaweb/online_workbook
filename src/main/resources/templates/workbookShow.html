@@ -22,6 +22,12 @@
 					<td>
 						<a th:href="@{/workbook/{workbookId}/{id}/edit(workbookId=${workbook.id}, id=*{id})}"><button>編集</button></a>
 					</td>
+					<td>
+						<form th:action="@{/chapter/delete/{id}(id=*{id})}" th:method="post">
+							<input type="hidden" th:field="${workbook.id}" />
+							<button type="submit">削除</button>						
+						</form>
+					</td>
 				</tr>
 			</table>
 			<a href="/">問題集一覧に戻る</a>

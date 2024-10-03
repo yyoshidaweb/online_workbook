@@ -49,7 +49,15 @@ public class ChapterService {
 	 */
 	@Transactional
 	public void update(Chapter chapter) {
-		System.out.println(chapter);
-//		chapterMapper.update(chapter);
+		chapterMapper.update(chapter);
+	}
+	
+	/**
+	 * 章の削除を実行する
+	 * @param id
+	 */
+	@Transactional
+	public void delete(Long id) {
+		chapterMapper.delete(id);
 	}
 }

@@ -11,7 +11,7 @@
 		</header>
 		<hr/>
 		<main>
-			<form th:action="@{/chapter/update}" th:object="${chapter}" th:method="post">
+			<form th:action="@{/chapter/update/{id}(id=*{id})}" th:object="${chapter}" th:method="post">
 				<table>
 					<tr>
 						<td>
@@ -33,12 +33,13 @@
 					</tr>
 					<tr>
 						<td>
-							<button type="submit">作成</button>
+							<input type="hidden" th:field="${workbook.id}" />
+							<button type="submit">変更</button>
 						</td>
 					</tr>
 				</table>
 			</form>
-			<a th:href="@{/workbook/{id}(id=${workbook.id})}">問題集詳細に戻る</a>
+			<a th:href="@{/workbook/{id}(id=${workbook.id})}">問題集に戻る</a>
 		</main>
 	</body>
 </html>
