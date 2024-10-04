@@ -33,13 +33,14 @@
 					</tr>
 					<tr>
 						<td>
+							<input type="hidden" th:field="${chapter.workbookId}">
 							<input type="hidden" th:field="*{chapterId}">
 							<button type="submit">作成</button>
 						</td>
 					</tr>
 				</table>
 			</form>
-			<a th:href="@{/workbook/{workbookId}/{chapterId}(workbookId=${chapter.workbookId}, chapterId=${question.chapterId})}">問題集詳細に戻る</a>
+			<a th:href="@{/workbook/{workbookId}/{chapterId}(workbookId=${chapter.workbookId}, chapterId=${question.chapterId})}">問題一覧に戻る</a>
 		</main>
 	</body>
 </html>

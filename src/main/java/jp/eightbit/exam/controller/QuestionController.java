@@ -3,11 +3,16 @@ package jp.eightbit.exam.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import jp.eightbit.exam.entity.Chapter;
 import jp.eightbit.exam.entity.Question;
+import jp.eightbit.exam.entity.Workbook;
 import jp.eightbit.exam.service.ChapterService;
 import jp.eightbit.exam.service.QuestionService;
 
@@ -37,6 +42,13 @@ public class QuestionController {
 		return "questionShow";
 	}
 	
+	/**
+	 * 問題作成ページを表示する
+	 * @param workbookId
+	 * @param chapterId
+	 * @param model
+	 * @return
+	 */
 	@GetMapping("/workbook/{workbookId}/{chapterId}/question/create")
 	public String createQuestion(@PathVariable(name = "workbookId") Integer workbookId, @PathVariable(name = "chapterId") Integer chapterId, Model model) {
 		Chapter chapter = chapterService.findOne(chapterId);
@@ -46,5 +58,25 @@ public class QuestionController {
 		model.addAttribute("chapter", chapter);
 		model.addAttribute("question", question);
 		return "questionCreate";
+	}
+	
+	/**
+	 * 問題作成を実行する
+	 * @param question
+	 * @param result
+	 * @param chapter
+	 * @param model
+	 * @return
+	 */
+	@PostMapping("/question/createExecute")
+	public String createExecute(@ModelAttribute("question") @Validated Question question, BindingResult result, @ModelAttribute("chapter") Chapter chapter, Model model) {
+		if (result.hasErrors()) {
+			return "questionCreate";
+		} else {
+			String workbookIdString = chapter.getWorkbookId().toString();
+			String chapterIdString = question.getChapterId().toString();
+			questionService.save(question);
+			return "redirect:/workbook/" + workbookIdString + "/" + chapterIdString;
+		}
 	}
 }

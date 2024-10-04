@@ -34,9 +34,13 @@ public class QuestionService {
 		return questionMapper.findOne((long)id);
 	}
 	
+	/**
+	 * 問題の作成を実行する
+	 * @param question
+	 */
 	@Transactional
 	public void save(Question question) {
 		System.out.println(question);
-//		questionMapper.save(question);
+		questionMapper.save(question);
 	}
 }
