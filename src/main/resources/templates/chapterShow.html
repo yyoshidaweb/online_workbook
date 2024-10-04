@@ -16,6 +16,11 @@
 					<td>
 						<h2><a th:href="@{/workbook/{workbookId}/{chapterId}/{id}(workbookId=${chapter.workbookId}, chapterId=${chapter.id}, id=*{id})}" th:text="'問題' + *{number}"></a></h2>
 					</td>
+					<td>
+						<a th:href="@{/workbook/{workbookId}/{chapterId}/{id}/edit(workbookId=${chapter.workbookId}, chapterId=${chapter.id}, id=*{id})}">
+							<button>編集</button>
+						</a>
+					</td>
 				</tr>
 				<tr>
 					<td>

@@ -79,4 +79,23 @@ public class QuestionController {
 			return "redirect:/workbook/" + workbookIdString + "/" + chapterIdString;
 		}
 	}
+	
+	/**
+	 * 問題編集ページを表示する
+	 * @param workbookId
+	 * @param chapterId
+	 * @param id
+	 * @param model
+	 * @return
+	 */
+	@GetMapping("/workbook/{workbookId}/{chapterId}/{id}/edit")
+	public String editQuestion(@PathVariable(name = "workbookId") Integer workbookId, @PathVariable(name = "chapterId") Integer chapterId, @PathVariable(name = "id") Integer id, Model model) {
+		Chapter chapter = chapterService.findOne(chapterId);
+		chapter.setWorkbookId((long)workbookId);
+		Question question = questionService.findOne(id);
+		question.setChapterId((long)chapterId);
+		model.addAttribute("chapter", chapter);
+		model.addAttribute("question", question);
+		return "questionEdit";
+	}
 }

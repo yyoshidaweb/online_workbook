@@ -40,7 +40,16 @@ public class QuestionService {
 	 */
 	@Transactional
 	public void save(Question question) {
-		System.out.println(question);
 		questionMapper.save(question);
+	}
+	
+	/**
+	 * 問題編集を実行する
+	 * @param question
+	 */
+	@Transactional
+	public void update(Question question) {
+		System.out.println(question);
+//		questionMapper.update(question);
 	}
 }
