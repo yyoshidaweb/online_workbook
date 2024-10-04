@@ -120,4 +120,12 @@ public class QuestionController {
 			return "redirect:/workbook/" + workbookIdString + "/" + chapterIdString;
 		}
 	}
+	
+	@PostMapping("/question/delete/{id}")
+	public String deleteChapter(@PathVariable(name = "id") Long id, @ModelAttribute("chapter") Chapter chapter) {
+		String workbookIdString = chapter.getWorkbookId().toString();
+		String chapterIdString = chapter.getId().toString();
+		questionService.delete(id);
+		return "redirect:/workbook/" + workbookIdString + "/" + chapterIdString;
+	}
 }

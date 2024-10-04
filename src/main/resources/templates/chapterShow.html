@@ -21,6 +21,13 @@
 							<button>編集</button>
 						</a>
 					</td>
+					<td>
+						<form th:action="@{/question/delete/{id}(id=*{id})}" th:method="post">
+							<input type="hidden" th:field="${chapter.workbookId}" />
+							<input type="hidden" th:field="${chapter.id}" />
+							<button type="submit">削除</button>						
+						</form>
+					</td>
 				</tr>
 				<tr>
 					<td>

@@ -51,4 +51,13 @@ public class QuestionService {
 	public void update(Question question) {
 		questionMapper.update(question);
 	}
+	
+	/**
+	 * 問題の削除を実行する
+	 * @param id
+	 */
+	@Transactional
+	public void delete(Long id) {
+		questionMapper.delete(id);
+	}
 }
