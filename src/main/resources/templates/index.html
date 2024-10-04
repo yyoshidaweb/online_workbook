@@ -13,13 +13,8 @@
 		<main>
 			<table>
 				<tr th:each="workbook : ${workbookList}" th:object="${workbook}">
-					<td><a th:href="@{/workbook/{id}(id=*{id})}" th:text="*{title}"></a></td>
+					<td><h2><a th:href="@{/workbook/{id}(id=*{id})}" th:text="*{title}"></a></h2></td>
 					<td><p th:text="*{price} + '円'"></p></td>
-					<td>
-						<form th:action="@{/}">
-							<button type="submit">購入</button>
-						</form>
-					</td>
 					<td>
 						<a th:href="@{workbook/edit/{id}(id=*{id})}">
 							<button>編集</button>

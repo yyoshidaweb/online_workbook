@@ -17,7 +17,7 @@
 						<td>
 							<label>
 								章番号
-								<input type="text" th:field="*{number}" />
+								<input type="number" min="0" th:field="*{number}" />
 							</label>
 							<p th:if="${#fields.hasErrors('number')}" th:errors="*{number}"></p>
 						</td>

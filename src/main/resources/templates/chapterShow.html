@@ -1,26 +1,41 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 	<head>
-		<title th:text="*{number} + '章：' + *{name}" th:object="${chapter}"></title>
+		<title th:text="*{number} + '章 ' + *{name}" th:object="${chapter}"></title>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	</head>
 	<body>
 		<header>
-			<h1 th:text="*{number} + '章：' + *{name}" th:object="${chapter}"></h1>
-			<a href="/"><button>問題を追加</button></a>
+			<h1 th:text="*{number} + '章 ' + *{name}" th:object="${chapter}"></h1>
+			<a th:href="@{/workbook/{workbookId}/{chapterId}/question/create(workbookId=${chapter.workbookId}, chapterId=${chapter.id})}"><button>問題を追加</button></a>
 		</header>
 		<hr/>
 		<main>
-			<table>
+			<table th:each="question : ${questionList}" th:object="${question}">
 				<tr>
 					<td>
-						<p>問題タイトル</p>
+						<h2><a th:href="@{/workbook/{workbookId}/{chapterId}/{id}(workbookId=${chapter.workbookId}, chapterId=${chapter.id}, id=*{id})}" th:text="'問題' + *{number}"></a></h2>
 					</td>
 					<td>
-						<a href="/">問題名</a>
+						<a th:href="@{/workbook/{workbookId}/{chapterId}/{id}/edit(workbookId=${chapter.workbookId}, chapterId=${chapter.id}, id=*{id})}">
+							<button>編集</button>
+						</a>
+					</td>
+					<td>
+						<form th:action="@{/question/delete/{id}(id=*{id})}" th:method="post">
+							<input type="hidden" th:field="${chapter.workbookId}" />
+							<input type="hidden" th:field="${chapter.id}" />
+							<button type="submit">削除</button>						
+						</form>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<p th:text="*{sentence}"></p>
 					</td>
 				</tr>
 			</table>
+			<a th:href="@{/workbook/{id}(id=${chapter.workbookId})}">前のページに戻る</a>
 		</main>
 	</body>
 </html>

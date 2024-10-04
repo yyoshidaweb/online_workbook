@@ -28,3 +28,16 @@ CREATE TABLE IF NOT EXISTS chapter (
   PRIMARY KEY (id)
 );
 ```
+
+### 問題テーブル
+
+```sql
+CREATE TABLE IF NOT EXISTS question (
+  id bigint(20) NOT NULL AUTO_INCREMENT,
+  number int,
+  sentence varchar(10000),
+  chapter_id bigint(20),
+  foreign key (chapter_id) references chapter(id) on delete cascade on update cascade,
+  PRIMARY KEY (id)
+);
+```

@@ -25,7 +25,7 @@
 						<td>
 							<label>
 								価格
-								<input type="text" th:field="*{price}" />
+								<input type="number" min="0" th:field="*{price}" />
 							</label>
 							<p th:if="${#fields.hasErrors('price')}" th:errors="*{price}"></p>
 						</td>

@@ -30,8 +30,8 @@ public class ChapterService {
 	 * @return
 	 */
 	@Transactional
-	public Chapter findOne(Integer workbookId, Integer id) {
-		return chapterMapper.findOne((long)workbookId, (long)id);
+	public Chapter findOne(Integer id) {
+		return chapterMapper.findOne((long)id);
 	}
 	
 	/**

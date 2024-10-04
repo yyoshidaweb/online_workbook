@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<title>問題編集</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	</head>
+	<body>
+		<header>
+			<h1 th:text="'問題' + ${question.number}"></h1>
+			<h2>問題編集</h2>
+		</header>
+		<hr/>
+		<main>
+			<form th:action="@{/question/update/{id}(id=*{id})}" th:object="${question}" th:method="post">
+				<table>
+					<tr>
+						<td>
+							<label>
+								問題番号
+								<input type="number" min="0" th:field="*{number}" />
+							</label>
+							<p th:if="${#fields.hasErrors('number')}" th:errors="*{number}"></p>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<label>
+								問題文
+								<textarea rows="3" cols="50" th:field="*{sentence}"></textarea>
+							</label>
+							<p th:if="${#fields.hasErrors('sentence')}" th:errors="*{sentence}"></p>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<input type="hidden" th:field="${chapter.workbookId}" />
+							<input type="hidden" th:field="*{chapterId}" />
+							<button type="submit">変更</button>
+						</td>
+					</tr>
+				</table>
+			</form>
+			<a th:href="@{/workbook/{workbookId}/{id}(workbookId=${chapter.workbookId}, id=${question.chapterId})}">問題一覧に戻る</a>
+		</main>
+	</body>
+</html>
