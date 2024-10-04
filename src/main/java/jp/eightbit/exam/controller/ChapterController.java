@@ -1,5 +1,7 @@
 package jp.eightbit.exam.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -11,8 +13,10 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import jp.eightbit.exam.entity.Chapter;
+import jp.eightbit.exam.entity.Question;
 import jp.eightbit.exam.entity.Workbook;
 import jp.eightbit.exam.service.ChapterService;
+import jp.eightbit.exam.service.QuestionService;
 import jp.eightbit.exam.service.WorkbookService;
 
 @Controller
@@ -22,6 +26,9 @@ public class ChapterController {
 	
 	@Autowired
 	private WorkbookService workbookService;
+	
+	@Autowired
+	private QuestionService questionService;
 	
 	/**
 	 * 章詳細ページを表示する。
@@ -33,7 +40,10 @@ public class ChapterController {
 	@GetMapping("/workbook/{workbookId}/{id}")
 	public String showChapter(@PathVariable(name = "workbookId") Integer workbookId, @PathVariable(name = "id") Integer id, Model model) {
 		Chapter chapter = chapterService.findOne(workbookId, id);
+		chapter.setWorkbookId((long)workbookId);
+		List<Question> questionList = questionService.findAll(id);
 		model.addAttribute("chapter", chapter);
+		model.addAttribute("questionList", questionList);
 		return "chapterShow";
 	}
 	

@@ -11,16 +11,19 @@
 		</header>
 		<hr/>
 		<main>
-			<table>
+			<table th:each="question : ${questionList}" th:object="${question}">
 				<tr>
 					<td>
-						<p>問題タイトル</p>
+						<h2><a href="/" th:text="'問題' + *{number}"></a></h2>
 					</td>
+				</tr>
+				<tr>
 					<td>
-						<a href="/">問題名</a>
+						<p th:text="*{sentence}"></p>
 					</td>
 				</tr>
 			</table>
+			<a th:href="@{/workbook/{id}(id=${chapter.workbookId})}">前のページに戻る</a>
 		</main>
 	</body>
 </html>
