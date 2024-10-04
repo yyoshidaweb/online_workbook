@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<title>問題作成</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	</head>
+	<body>
+		<header>
+			<h1 th:text="${chapter.name}"></h1>
+			<h2>問題作成</h2>
+		</header>
+		<hr/>
+		<main>
+			<form th:action="@{/question/createExecute}" th:object="${question}" th:method="post">
+				<table>
+					<tr>
+						<td>
+							<label>
+								問題番号
+								<input type="text" th:field="*{number}" />
+							</label>
+							<p th:if="${#fields.hasErrors('number')}" th:errors="*{number}"></p>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<label>
+								問題文
+								<input type="text" th:field="*{sentence}" />
+							</label>
+							<p th:if="${#fields.hasErrors('sentence')}" th:errors="*{sentence}"></p>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<input type="hidden" th:field="*{chapterId}">
+							<button type="submit">作成</button>
+						</td>
+					</tr>
+				</table>
+			</form>
+			<a th:href="@{/workbook/{workbookId}/{chapterId}(workbookId=${chapter.workbookId}, chapterId=${question.chapterId})}">問題集詳細に戻る</a>
+		</main>
+	</body>
+</html>

@@ -37,8 +37,14 @@ public class QuestionController {
 		return "questionShow";
 	}
 	
-	@GetMapping("/chapter/{chapterId}/question/create")
-	public String createQuestion(@PathVariable(name = "chapterId") Integer chapterId, Model model) {
+	@GetMapping("/workbook/{workbookId}/{chapterId}/question/create")
+	public String createQuestion(@PathVariable(name = "workbookId") Integer workbookId, @PathVariable(name = "chapterId") Integer chapterId, Model model) {
+		Chapter chapter = chapterService.findOne(chapterId);
+		chapter.setWorkbookId((long)workbookId);
+		Question question = new Question();
+		question.setChapterId((long)chapterId);
+		model.addAttribute("chapter", chapter);
+		model.addAttribute("question", question);
 		return "questionCreate";
 	}
 }
