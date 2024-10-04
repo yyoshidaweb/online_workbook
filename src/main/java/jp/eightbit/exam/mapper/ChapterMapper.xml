@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="jp.eightbit.exam.mapper.ChapterMapper">
   <select id="findAll" resultType="jp.eightbit.exam.entity.Chapter">
-    select * from chapter where workbook_id = #{workbookId}
+    select * from chapter where workbook_id = #{workbookId} order by number
   </select>
 
   <select id="findOne" resultType="jp.eightbit.exam.entity.Chapter">
