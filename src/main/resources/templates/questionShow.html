@@ -17,7 +17,7 @@
 					</td>
 				</tr>
 			</table>
-			<a th:href="@{/workbook/{id}(id=${chapter.workbookId})}">前のページに戻る</a>
+			<a th:href="@{/workbook/{workbookId}/{chapterId}(workbookId=${chapter.workbookId}, chapterId=${chapter.id})}">前のページに戻る</a>
 		</main>
 	</body>
 </html>
