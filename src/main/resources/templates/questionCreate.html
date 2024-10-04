@@ -6,7 +6,7 @@
 	</head>
 	<body>
 		<header>
-			<h1 th:text="${chapter.name}"></h1>
+			<h1 th:text="*{number} + '章 ' + *{name}" th:object="${chapter}"></h1>
 			<h2>問題作成</h2>
 		</header>
 		<hr/>
@@ -17,7 +17,7 @@
 						<td>
 							<label>
 								問題番号
-								<input type="text" th:field="*{number}" />
+								<input type="number" min="0" th:field="*{number}" />
 							</label>
 							<p th:if="${#fields.hasErrors('number')}" th:errors="*{number}"></p>
 						</td>
@@ -26,7 +26,7 @@
 						<td>
 							<label>
 								問題文
-								<input type="text" th:field="*{sentence}" />
+								<textarea rows="3" cols="50" th:field="*{sentence}"></textarea>
 							</label>
 							<p th:if="${#fields.hasErrors('sentence')}" th:errors="*{sentence}"></p>
 						</td>

@@ -116,11 +116,17 @@ public class QuestionController {
 			question.setId(id);
 			questionService.update(question);
 			String workbookIdString = chapter.getWorkbookId().toString();
-			String chapterIdString = chapter.getId().toString();
+			String chapterIdString = question.getChapterId().toString();
 			return "redirect:/workbook/" + workbookIdString + "/" + chapterIdString;
 		}
 	}
 	
+	/**
+	 * 問題の削除を実行する
+	 * @param id
+	 * @param chapter
+	 * @return
+	 */
 	@PostMapping("/question/delete/{id}")
 	public String deleteChapter(@PathVariable(name = "id") Long id, @ModelAttribute("chapter") Chapter chapter) {
 		String workbookIdString = chapter.getWorkbookId().toString();

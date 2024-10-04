@@ -14,10 +14,7 @@
 			<table>
 				<tr th:each="chapter : ${chapterList}" th:object="${chapter}">
 					<td>
-						<p th:text="*{number} + '章：'"></p>
-					</td>
-					<td>
-						<a th:href="@{/workbook/{workbookId}/{id}(workbookId=${workbook.id}, id=*{id})}" th:text="*{name}"></a>
+						<h2><a th:href="@{/workbook/{workbookId}/{id}(workbookId=${workbook.id}, id=*{id})}" th:text="*{number} + '章 ' + *{name}"></a></h2>
 					</td>
 					<td>
 						<a th:href="@{/workbook/{workbookId}/{id}/edit(workbookId=${workbook.id}, id=*{id})}"><button>編集</button></a>

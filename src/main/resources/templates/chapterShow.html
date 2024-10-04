@@ -1,12 +1,12 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 	<head>
-		<title th:text="*{number} + '章：' + *{name}" th:object="${chapter}"></title>
+		<title th:text="*{number} + '章 ' + *{name}" th:object="${chapter}"></title>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	</head>
 	<body>
 		<header>
-			<h1 th:text="*{number} + '章：' + *{name}" th:object="${chapter}"></h1>
+			<h1 th:text="*{number} + '章 ' + *{name}" th:object="${chapter}"></h1>
 			<a th:href="@{/workbook/{workbookId}/{chapterId}/question/create(workbookId=${chapter.workbookId}, chapterId=${chapter.id})}"><button>問題を追加</button></a>
 		</header>
 		<hr/>
