@@ -14,7 +14,7 @@
 			<table th:each="question : ${questionList}" th:object="${question}">
 				<tr>
 					<td>
-						<h2><a href="/" th:text="'問題' + *{number}"></a></h2>
+						<h2><a th:href="@{/workbook/{workbookId}/{chapterId}/{id}(workbookId=${chapter.workbookId}, chapterId=${chapter.id}, id=*{id})}" th:text="'問題' + *{number}"></a></h2>
 					</td>
 				</tr>
 				<tr>

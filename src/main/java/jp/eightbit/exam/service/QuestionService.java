@@ -21,4 +21,8 @@ public class QuestionService {
 	public List<Question> findAll(Integer chapterId) {
 		return questionMapper.findAll((long)chapterId);
 	}
+	
+	public Question findOne(Integer id) {
+		return questionMapper.findOne((long)id);
+	}
 }

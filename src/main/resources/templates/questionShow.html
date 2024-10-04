@@ -1,0 +1,23 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<title th:text="'問題' + *{number}" th:object="${question}"></title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	</head>
+	<body>
+		<header>
+			<h1 th:text="'問題' + *{number}" th:object="${question}"></h1>
+		</header>
+		<hr/>
+		<main>
+			<table th:object="${question}">
+				<tr>
+					<td>
+						<p th:text="*{sentence}"></p>
+					</td>
+				</tr>
+			</table>
+			<a th:href="@{/workbook/{id}(id=${chapter.workbookId})}">前のページに戻る</a>
+		</main>
+	</body>
+</html>

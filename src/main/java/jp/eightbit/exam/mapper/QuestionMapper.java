@@ -11,7 +11,7 @@ import jp.eightbit.exam.entity.Question;
 public interface QuestionMapper {
 	List<Question> findAll(Long chapterId);
 	
-	Question findOne(@Param("chapterId") Long chapterId, @Param("id") Long id);
+	Question findOne(Long id);
 	
 	void save(Question question);
 	
