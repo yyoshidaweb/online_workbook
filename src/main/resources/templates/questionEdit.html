@@ -33,7 +33,8 @@
 					</tr>
 					<tr>
 						<td>
-							<input type="hidden" th:field="${chapter.id}" />
+							<input type="hidden" th:field="${chapter.workbookId}" />
+							<input type="hidden" th:field="*{chapterId}" />
 							<button type="submit">変更</button>
 						</td>
 					</tr>

@@ -49,7 +49,6 @@ public class QuestionService {
 	 */
 	@Transactional
 	public void update(Question question) {
-		System.out.println(question);
-//		questionMapper.update(question);
+		questionMapper.update(question);
 	}
 }

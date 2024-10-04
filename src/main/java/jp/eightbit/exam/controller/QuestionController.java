@@ -98,4 +98,26 @@ public class QuestionController {
 		model.addAttribute("question", question);
 		return "questionEdit";
 	}
+	
+	/**
+	 * 問題編集を実行する
+	 * @param id
+	 * @param question
+	 * @param result
+	 * @param chapter
+	 * @param model
+	 * @return
+	 */
+	@PostMapping("/question/update/{id}")
+	public String updateChapter(@PathVariable(name = "id") Long id, @ModelAttribute("question") @Validated Question question, BindingResult result, @ModelAttribute("chapter") Chapter chapter, Model model) {
+		if (result.hasErrors()) {
+			return "questionEdit";
+		} else {
+			question.setId(id);
+			questionService.update(question);
+			String workbookIdString = chapter.getWorkbookId().toString();
+			String chapterIdString = chapter.getId().toString();
+			return "redirect:/workbook/" + workbookIdString + "/" + chapterIdString;
+		}
+	}
 }
