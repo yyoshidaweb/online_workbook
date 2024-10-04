@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import jp.eightbit.exam.entity.Question;
 import jp.eightbit.exam.mapper.QuestionMapper;
@@ -18,11 +19,24 @@ public class QuestionService {
 	 * @param chapterId
 	 * @return
 	 */
+	@Transactional
 	public List<Question> findAll(Integer chapterId) {
 		return questionMapper.findAll((long)chapterId);
 	}
 	
+	/**
+	 * 問題idを基に問題を１つ取得する
+	 * @param id
+	 * @return
+	 */
+	@Transactional
 	public Question findOne(Integer id) {
 		return questionMapper.findOne((long)id);
+	}
+	
+	@Transactional
+	public void save(Question question) {
+		System.out.println(question);
+//		questionMapper.save(question);
 	}
 }

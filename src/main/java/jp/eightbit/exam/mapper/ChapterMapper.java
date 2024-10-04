@@ -11,7 +11,7 @@ import jp.eightbit.exam.entity.Chapter;
 public interface ChapterMapper {
 	List<Chapter> findAll(Long workbookId);
 	
-	Chapter findOne(@Param("workbookId") Long workbookId, @Param("id") Long id);
+	Chapter findOne(Long id);
 	
 	void save(Chapter chapter);
 	

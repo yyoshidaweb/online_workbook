@@ -39,7 +39,7 @@ public class ChapterController {
 	 */
 	@GetMapping("/workbook/{workbookId}/{id}")
 	public String showChapter(@PathVariable(name = "workbookId") Integer workbookId, @PathVariable(name = "id") Integer id, Model model) {
-		Chapter chapter = chapterService.findOne(workbookId, id);
+		Chapter chapter = chapterService.findOne(id);
 		chapter.setWorkbookId((long)workbookId);
 		List<Question> questionList = questionService.findAll(id);
 		model.addAttribute("chapter", chapter);
@@ -92,7 +92,7 @@ public class ChapterController {
 	@GetMapping("/workbook/{workbookId}/{id}/edit")
 	public String editChapter(@PathVariable(name = "workbookId") Integer workbookId, @PathVariable(name = "id") Integer id, Model model) {
 		Workbook workbook = workbookService.findOne(workbookId);
-		Chapter chapter = chapterService.findOne(workbookId, id);
+		Chapter chapter = chapterService.findOne(id);
 		chapter.setWorkbookId((long)workbookId);
 		model.addAttribute("workbook", workbook);
 		model.addAttribute("chapter", chapter);

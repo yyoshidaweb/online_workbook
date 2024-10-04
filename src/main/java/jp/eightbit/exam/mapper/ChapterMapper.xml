@@ -6,7 +6,7 @@
   </select>
 
   <select id="findOne" resultType="jp.eightbit.exam.entity.Chapter">
-    select * from chapter where workbook_id = #{workbookId} and id = #{id}
+    select * from chapter where id = #{id}
   </select>
 
   <insert id="save" useGeneratedKeys="true" keyProperty="id">
