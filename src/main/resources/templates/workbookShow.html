@@ -19,7 +19,7 @@
 					<a class="btn btn-primary" th:href="@{/workbook/{workbookId}/{id}/edit(workbookId=${workbook.id}, id=*{id})}">編集</a>
 					<form th:action="@{/chapter/delete/{id}(id=*{id})}" th:method="post">
 						<input type="hidden" th:field="${workbook.id}" />
-						<button class="btn btn-primary" type="submit">削除</button>						
+						<button class="btn btn-danger" type="submit">削除</button>						
 					</form>
 			</div>
 			<a href="/">問題集一覧に戻る</a>

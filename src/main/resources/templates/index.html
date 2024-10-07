@@ -16,9 +16,7 @@
 				<div class="card-body">
 					<h2 class="card-title"><a th:href="@{/workbook/{id}(id=*{id})}" th:text="*{title}"></a></h2>
 				</div>
-					<a th:href="@{workbook/edit/{id}(id=*{id})}">
-						<button class="btn btn-primary">編集</button>
-					</a>
+					<a class="btn btn-primary" th:href="@{workbook/edit/{id}(id=*{id})}">編集</a>
 					<form th:action="@{workbook/delete/{id}(id=*{id})}" th:method="post">
 						<button class="btn btn-danger" type="submit">削除</button>
 					</form>
