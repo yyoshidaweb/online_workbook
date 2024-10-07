@@ -8,11 +8,12 @@
 	</head>
 	<body>
 		<header>
-			<h1 th:text="${workbook.title}"></h1>
-			<h2>章作成</h2>
+			<a class="btn btn-secondary" href="/">問題集オンライン</a>
 		</header>
 		<hr/>
 		<main>
+			<h1 th:text="${workbook.title}"></h1>
+			<h2>章作成</h2>
 			<form th:action="@{/chapter/createExecute}" th:object="${chapter}" th:method="post">
 				<div class="card">
 					<div class="card-body">

@@ -8,13 +8,14 @@
 	</head>
 	<body>
 		<header class="header">
-			<h1 th:text="*{number} + '章 ' + *{name}" th:object="${chapter}"></h1>
-			<a class="btn btn-primary" th:href="@{/workbook/{workbookId}/{chapterId}/question/create(workbookId=${chapter.workbookId}, chapterId=${chapter.id})}">問題を追加</a>
+			<a class="btn btn-secondary" href="/">問題集オンライン</a>
 		</header>
 		<main>
+			<h2 th:text="*{number} + '章 ' + *{name}" th:object="${chapter}"></h2>
+			<a class="btn btn-primary" th:href="@{/workbook/{workbookId}/{chapterId}/question/create(workbookId=${chapter.workbookId}, chapterId=${chapter.id})}">問題を追加</a>
 			<div class="card" th:each="question : ${questionList}" th:object="${question}">
 				<div class="card-body">
-					<h2><a class="card-title" th:href="@{/workbook/{workbookId}/{chapterId}/{id}(workbookId=${chapter.workbookId}, chapterId=${chapter.id}, id=*{id})}" th:text="'問題' + *{number}"></a></h2>
+					<h2 class="card-title"><a th:href="@{/workbook/{workbookId}/{chapterId}/{id}(workbookId=${chapter.workbookId}, chapterId=${chapter.id}, id=*{id})}" th:text="'問題' + *{number}"></a></h2>
 				</div>
 				<a class="btn btn-primary" th:href="@{/workbook/{workbookId}/{chapterId}/{id}/edit(workbookId=${chapter.workbookId}, chapterId=${chapter.id}, id=*{id})}">編集</a>
 				<form th:action="@{/question/delete/{id}(id=*{id})}" th:method="post">

@@ -8,9 +8,10 @@
 	</head>
 	<body>
 		<header>
-			<h1>問題詳細</h1>
+			<a class="btn btn-secondary" href="/">問題集オンライン</a>
 		</header>
 		<main>
+			<h1>問題詳細</h1>
 			<div class="card" th:object="${question}">
 				<div class="card-body">
 					<h2 class="card-title" th:text="'問題' + *{number}" th:object="${question}"></h2>

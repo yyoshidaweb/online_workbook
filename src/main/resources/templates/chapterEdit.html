@@ -7,11 +7,12 @@
 		<link rel="stylesheet" th:href="@{/css/common.css}" type="text/css">
 	</head>
 	<body>
-		<header>
-			<h1 th:text="${workbook.title}"></h1>
-			<h2>章編集</h2>
+		<header>			
+			<a class="btn btn-secondary" href="/">問題集オンライン</a>
 		</header>
 		<main>
+			<h1 th:text="${workbook.title}"></h1>
+			<h2>章編集</h2>
 			<form th:action="@{/chapter/update/{id}(id=*{id})}" th:object="${chapter}" th:method="post">
 				<div class="card">
 					<div class="card-body">

@@ -8,19 +8,20 @@
 	</head>
 	<body>
 		<header class="header">
-			<h1 th:text=${workbook.title}></h1>
-			<a class="btn btn-primary" th:href="@{/workbook/{id}/chapter/create(id=${workbook.id})}">章を追加</a>
+			<a class="btn btn-secondary" href="/">問題集オンライン</a>
 		</header>
 		<main>
+			<h1 th:text=${workbook.title}></h1>
+			<a class="btn btn-primary" th:href="@{/workbook/{id}/chapter/create(id=${workbook.id})}">章を追加</a>
 			<div class="card" th:each="chapter : ${chapterList}" th:object="${chapter}">
 				<div class="card-body">
 					<h2 class="card-title"><a th:href="@{/workbook/{workbookId}/{id}(workbookId=${workbook.id}, id=*{id})}" th:text="*{number} + '章 ' + *{name}"></a></h2>
 				</div>
-					<a class="btn btn-primary" th:href="@{/workbook/{workbookId}/{id}/edit(workbookId=${workbook.id}, id=*{id})}">編集</a>
-					<form th:action="@{/chapter/delete/{id}(id=*{id})}" th:method="post">
-						<input type="hidden" th:field="${workbook.id}" />
-						<button class="btn btn-danger" type="submit">削除</button>						
-					</form>
+				<a class="btn btn-primary" th:href="@{/workbook/{workbookId}/{id}/edit(workbookId=${workbook.id}, id=*{id})}">編集</a>
+				<form th:action="@{/chapter/delete/{id}(id=*{id})}" th:method="post">
+					<input type="hidden" th:field="${workbook.id}" />
+					<button class="btn btn-danger" type="submit">削除</button>						
+				</form>
 			</div>
 			<a href="/">問題集一覧に戻る</a>
 		</main>

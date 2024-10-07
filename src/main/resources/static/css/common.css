@@ -1,15 +1,21 @@
-body {
-	margin: 2rem;
+main {
+	margin-left: 2rem;
+	margin-right: 2rem;
 }
 
-.header {
+header {
+	background-color: lightgray;
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
+	width: 100%;
+	padding-left: 2rem;
+	padding-right: 2rem;
 	margin-bottom: 2rem;
 }
 
 .card {
+	background-color: ghostwhite;
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
@@ -17,7 +23,6 @@ body {
 	width: 100%;
 	padding: 1rem;
 	margin-bottom: 2rem;
-	box-shadow: 0 1px 3px 0 lightgray;
 }
 
 form .card {

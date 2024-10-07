@@ -8,11 +8,11 @@
 	</head>
 	<body>
 		<header>
+			<a class="btn btn-secondary" href="/">問題集オンライン</a>
+		</header>
+		<main>
 			<h1 th:text="*{number} + '章 ' + *{name}" th:object="${chapter}"></h1>
 			<h2>問題作成</h2>
-		</header>
-		<hr/>
-		<main>
 			<form th:action="@{/question/createExecute}" th:object="${question}" th:method="post">
 				<div class="card">
 					<div class="card-body">
