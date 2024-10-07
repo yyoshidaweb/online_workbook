@@ -1,0 +1,24 @@
+body {
+	margin: 2rem;
+}
+
+.header {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	margin-bottom: 2rem;
+}
+
+.card {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+	margin-bottom: 2rem;
+	box-shadow: 0 1px 3px 0 lightgray;
+}
+
+.btn {
+	margin: 0.5rem;
+}

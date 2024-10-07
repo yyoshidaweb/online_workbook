@@ -4,30 +4,25 @@
 		<title>問題集一覧</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+		<link rel="stylesheet" th:href="@{/css/common.css}" type="text/css">
 	</head>
 	<body>
-		<header>
+		<header class="header">
 			<h1>問題集一覧</h1>
-			<a href="workbook/create"><button>問題集を追加</button></a>
+			<a href="workbook/create"><button class="btn btn-primary">問題集を追加</button></a>
 		</header>
-		<hr/>
 		<main>
-			<table>
-				<tr th:each="workbook : ${workbookList}" th:object="${workbook}">
-					<td><h2><a th:href="@{/workbook/{id}(id=*{id})}" th:text="*{title}"></a></h2></td>
-					<td><p th:text="*{price} + '円'"></p></td>
-					<td>
-						<a th:href="@{workbook/edit/{id}(id=*{id})}">
-							<button>編集</button>
-						</a>
-					</td>
-					<td>
-						<form th:action="@{workbook/delete/{id}(id=*{id})}" th:method="post">
-							<button type="submit">削除</button>
-						</form>
-					</td>
-				</tr>
-			</table>
+			<div class="card"  th:each="workbook : ${workbookList}" th:object="${workbook}">
+				<div class="card-body">
+					<h2 class="card-title"><a th:href="@{/workbook/{id}(id=*{id})}" th:text="*{title}"></a></h2>
+				</div>
+					<a th:href="@{workbook/edit/{id}(id=*{id})}">
+						<button class="btn btn-primary">編集</button>
+					</a>
+					<form th:action="@{workbook/delete/{id}(id=*{id})}" th:method="post">
+						<button class="btn btn-danger" type="submit">削除</button>
+					</form>
+			</div>
 		</main>
 	</body>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
