@@ -1,0 +1,45 @@
+main {
+	margin-left: 2rem;
+	margin-right: 2rem;
+}
+
+header {
+	background-color: lightgray;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	width: 100%;
+	padding-left: 2rem;
+	padding-right: 2rem;
+	margin-bottom: 2rem;
+}
+
+.card {
+	background-color: ghostwhite;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+	padding: 1rem;
+	margin-bottom: 2rem;
+}
+
+form .card {
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-start;
+}
+
+.btn {
+	margin: 1rem;
+}
+
+form .card-body, .form-label {
+	width: 100%;
+}
+
+textarea {
+	min-height: 5px;
+	field-sizing: content;
+}
