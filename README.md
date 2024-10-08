@@ -14,7 +14,7 @@
 
 #### 問題集
 
-![問題集作成画面録画](https://github.com/user-attachments/assets/48f196b9-9bd9-4760-bad6-6ccbbd4596e0)
+<img src="https://github.com/user-attachments/assets/48f196b9-9bd9-4760-bad6-6ccbbd4596e0" alt="問題集作成画面録画" width="640px">
 
 1. 問題集一覧ページの`問題集を追加`ボタンをクリック
 1. 問題集のタイトルと価格を入力
@@ -25,7 +25,7 @@
 
 #### 章
 
-![章作成画面録画](https://github.com/user-attachments/assets/fe2f3db3-54a5-47e1-96a0-e5dd04798ceb)
+<img src="https://github.com/user-attachments/assets/fe2f3db3-54a5-47e1-96a0-e5dd04798ceb" alt="章作成画面録画" width="640px">
 
 1. 目次ページの`章を追加`ボタンをクリック
 1. 章番号と章のタイトルを入力
@@ -36,7 +36,7 @@
 
 #### 問題
 
-![問題作成画面録画](https://github.com/user-attachments/assets/60142162-baff-4b31-9615-36d9cb9742ca)
+<img src="https://github.com/user-attachments/assets/60142162-baff-4b31-9615-36d9cb9742ca" alt="問題作成画面録画" width="640px">
 
 1. 問題一覧ページの`問題を追加`ボタンをクリック
 1. 問題番号と問題文を入力
@@ -49,7 +49,7 @@
 
 #### 問題集
 
-![問題集編集画面録画](https://github.com/user-attachments/assets/c7087c5b-8016-4ab2-bc05-788fee5cef69)
+<img src="https://github.com/user-attachments/assets/c7087c5b-8016-4ab2-bc05-788fee5cef69" alt="問題集編集画面録画" width="640px">
 
 1. 問題集一覧ページの`編集`ボタンをクリック
 1. 問題集のタイトルと価格を変更
@@ -57,7 +57,7 @@
 
 #### 章
 
-![章編集画面録画](https://github.com/user-attachments/assets/88aab617-e4d4-4411-bb42-0e1dfd3f639a)
+<img src="https://github.com/user-attachments/assets/88aab617-e4d4-4411-bb42-0e1dfd3f639a" alt="章編集画面録画" width="640px">
 
 1. 目次ページの`編集`ボタンをクリック
 1. 章番号と章のタイトルを変更
@@ -65,7 +65,7 @@
 
 #### 問題
 
-![問題編集画面録画](https://github.com/user-attachments/assets/71b830a3-4666-4a97-ac76-ea8493189f59)
+<img src="https://github.com/user-attachments/assets/71b830a3-4666-4a97-ac76-ea8493189f59" alt="問題編集画面録画" width="640px">
 
 1. 問題一覧ページの`編集`ボタンをクリック
 1. 問題番号と問題文を変更
@@ -75,7 +75,7 @@
 
 #### 問題集
 
-![問題集削除画面録画](https://github.com/user-attachments/assets/802ed8d8-167c-4f2f-b703-1de72543f3aa)
+<img src="https://github.com/user-attachments/assets/802ed8d8-167c-4f2f-b703-1de72543f3aa" alt="問題集削除画面録画" width="640px">
 
 1. 問題集一覧ページの`削除`ボタンをクリック
 
@@ -84,7 +84,7 @@
 
 #### 章
 
-![章削除画面録画](https://github.com/user-attachments/assets/44ee523a-c3a8-4850-91b8-ff3ed8333565)
+<img src="https://github.com/user-attachments/assets/44ee523a-c3a8-4850-91b8-ff3ed8333565" alt="章削除画面録画" width="640px">
 
 1. 目次ページの`削除`ボタンをクリック
 
@@ -93,7 +93,7 @@
 
 #### 問題
 
-![問題削除画面録画](https://github.com/user-attachments/assets/c0028316-3c20-4fe9-a00c-d9b9f2891bab)
+<img src="https://github.com/user-attachments/assets/c0028316-3c20-4fe9-a00c-d9b9f2891bab" alt="問題削除画面録画" width="640px">
 
 1. 問題一覧ページの`削除`をクリック
 
