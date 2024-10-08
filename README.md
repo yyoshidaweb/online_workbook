@@ -61,6 +61,30 @@
 1. 問題番号と問題文を変更
 1. `変更`をクリック
 
+### 問題集削除機能
+
+![問題集削除画面録画](https://github.com/user-attachments/assets/802ed8d8-167c-4f2f-b703-1de72543f3aa)
+
+1. 問題集一覧ページの`削除`ボタンをクリック
+
+> [!WARNING]
+> 問題集に紐づく章、その章に紐づく問題も全て削除されます。
+
+### 章削除機能
+
+![章削除画面録画](https://github.com/user-attachments/assets/44ee523a-c3a8-4850-91b8-ff3ed8333565)
+
+1. 目次ページの`削除`ボタンをクリック
+
+> [!WARNING]
+> 章に紐づく問題も全て削除されます。
+
+### 問題削除機能
+
+![問題削除画面録画](https://github.com/user-attachments/assets/c0028316-3c20-4fe9-a00c-d9b9f2891bab)
+
+1. 問題一覧ページの`削除`をクリック
+
 ## データベース作成クエリ
 
 ```sql
