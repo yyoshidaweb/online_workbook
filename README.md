@@ -6,7 +6,8 @@
 
 ### 問題集作成機能
 
-![問題集作成画面録画](https://github.com/user-attachments/assets/7d686f8a-8410-460a-a4c2-0c326530075f)
+![問題集作成画面録画](https://github.com/user-attachments/assets/1880dc84-5431-47db-8cb4-4a3d27b80415)
+
 
 1. 問題集一覧ページの`問題集を追加`ボタンをクリック
 1. 問題集のタイトルと価格を入力
