@@ -11,8 +11,10 @@
 			<a class="btn btn-secondary" href="/">問題集オンライン</a>
 		</header>
 		<main>
-			<h1>問題集一覧</h1>
-			<a href="workbook/create"><button class="btn btn-primary">問題集を追加</button></a>
+			<div class="title-container">
+				<h1>問題集一覧</h1>
+				<a href="workbook/create"><button class="btn btn-primary">問題集を追加</button></a>
+			</div>
 			<div class="card"  th:each="workbook : ${workbookList}" th:object="${workbook}">
 				<div class="card-body">
 					<h2 class="card-title"><a th:href="@{/workbook/{id}(id=*{id})}" th:text="*{title}"></a></h2>
