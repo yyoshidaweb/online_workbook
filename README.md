@@ -6,8 +6,7 @@
 
 ### 問題集作成機能
 
-![問題集作成画面録画](https://github.com/user-attachments/assets/1880dc84-5431-47db-8cb4-4a3d27b80415)
-
+![問題集作成画面録画](https://github.com/user-attachments/assets/48f196b9-9bd9-4760-bad6-6ccbbd4596e0)
 
 1. 問題集一覧ページの`問題集を追加`ボタンをクリック
 1. 問題集のタイトルと価格を入力
@@ -15,6 +14,17 @@
 
 > [!NOTE]
 > 作成した問題集データは、`workbook`テーブルの`title`カラム、`price`カラムに保存されます。
+
+### 章作成機能
+
+![章作成画面録画](https://github.com/user-attachments/assets/fe2f3db3-54a5-47e1-96a0-e5dd04798ceb)
+
+1. 目次ページの`章を追加`ボタンをクリック
+1. 章番号と章のタイトルを入力
+1. `作成ボタン`をクリック
+
+> [!NOTE]
+> 作成した問題集データは、`chapter`テーブルの`number`カラム、`name`カラムに保存されます。
 
 ## データベース作成クエリ
 
