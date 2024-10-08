@@ -2,6 +2,11 @@
 オンライン上で問題集を閲覧できるようにするためのWebアプリケーションです。<br>
 資格学習を行う際、紙媒体の問題集だけでは通勤時間に学習できないという課題を解決するために作成しました。
 
+## 使用技術
+
+![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/yyoshidaweb/online-workbook)
+
+
 ## 機能一覧
 
 ### 問題集作成機能
