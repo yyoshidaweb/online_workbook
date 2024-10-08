@@ -1,7 +1,4 @@
-# 環境
-## データベース
-データベースのクライアントから以下のクエリを実行して下さい。
-### 問題集テーブル
+## データベース作成クエリ
 
 ```sql
 CREATE DATABASE IF NOT EXISTS online_workbook;
@@ -14,11 +11,7 @@ CREATE TABLE IF NOT EXISTS workbook (
   price int,
   PRIMARY KEY (id)
 );
-```
 
-### 章テーブル
-
-```sql
 CREATE TABLE IF NOT EXISTS chapter (
   id bigint(20) NOT NULL AUTO_INCREMENT,
   number int,
@@ -27,11 +20,7 @@ CREATE TABLE IF NOT EXISTS chapter (
   foreign key (workbook_id) references workbook(id) on delete cascade on update cascade,
   PRIMARY KEY (id)
 );
-```
 
-### 問題テーブル
-
-```sql
 CREATE TABLE IF NOT EXISTS question (
   id bigint(20) NOT NULL AUTO_INCREMENT,
   number int,
