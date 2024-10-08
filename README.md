@@ -2,11 +2,6 @@
 オンライン上で問題集を閲覧できるようにするためのWebアプリケーションです。<br>
 資格学習を行う際、紙媒体の問題集だけでは通勤時間に学習できないという課題を解決するために作成しました。
 
-## 使用技術
-
-![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/yyoshidaweb/online-workbook)
-
-
 ## 機能一覧
 
 ### 問題集作成機能
@@ -89,6 +84,19 @@
 ![問題削除画面録画](https://github.com/user-attachments/assets/c0028316-3c20-4fe9-a00c-d9b9f2891bab)
 
 1. 問題一覧ページの`削除`をクリック
+
+## 使用技術
+
+* フロントエンド
+  * HTML
+  * CSS
+  * Thymeleaf
+* バックエンド
+  * Java
+* フレームワーク
+  * Spring Boot
+* データベース
+  * MySQL
 
 ## データベース作成クエリ
 
