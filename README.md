@@ -107,7 +107,7 @@
 * フレームワーク
     * Spring Framework 6.1.13
         * Spring Boot 3.3.4
-        * MyBatis-Spring 3.0.3
+        * MyBatis 3.5.14
 * データベース
     * MySQL 8.4.2
 
