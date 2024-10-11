@@ -98,16 +98,17 @@
 ## 使用技術
 
 * フロントエンド
-  * HTML Living Standard
-  * CSS
-  * Thymeleaf 3.1.2
+    * HTML Living Standard
+    * CSS
+    * テンプレートエンジン
+        * Thymeleaf 3.1.2
 * バックエンド
-  * Java 17
+    * Java 17
 * フレームワーク
-  * Spring Boot 3.3.4
-      * MyBatis-Spring 3.0.3
+    * Spring Boot 3.3.4
+        * MyBatis-Spring 3.0.3
 * データベース
-  * MySQL 8.4.2
+    * MySQL 8.4.2
 
 ## データベース作成クエリ
 
