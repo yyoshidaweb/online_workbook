@@ -98,7 +98,7 @@
 ## 使用技術
 
 * フロントエンド
-  * HTML
+  * HTML Living Standard
   * CSS
   * Thymeleaf 3.1.2
 * バックエンド
