@@ -100,13 +100,14 @@
 * フロントエンド
   * HTML
   * CSS
-  * Thymeleaf
+  * Thymeleaf 3.1.2
 * バックエンド
-  * Java
+  * Java 17
 * フレームワーク
-  * Spring Boot
+  * Spring Boot 3.3.4
+      * MyBatis-Spring 3.0.3
 * データベース
-  * MySQL
+  * MySQL 8.4.2
 
 ## データベース作成クエリ
 
