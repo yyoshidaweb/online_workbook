@@ -100,8 +100,8 @@
 * フロントエンド
     * HTML Living Standard
     * CSS
-    * テンプレートエンジン
-        * Thymeleaf 3.1.2
+* テンプレートエンジン
+    * Thymeleaf 3.1.2
 * バックエンド
     * Java 17
 * フレームワーク
