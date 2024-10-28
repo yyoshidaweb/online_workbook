@@ -12,7 +12,6 @@ public class OnlineWorkbookApplication extends SpringBootServletInitializer {
 		SpringApplication.run(OnlineWorkbookApplication.class, args);
 	}
 	
-//	Warファイル作成のための記述
 	@Override
 	protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
 		return application.sources(OnlineWorkbookApplication.class);

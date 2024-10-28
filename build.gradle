@@ -36,5 +36,11 @@ tasks.named('test') {
 }
 
 bootWar {
-	archiveFileName = 'OnlineWorkbook.war'
+	archiveFileName = 'online-workbook.war'
+}
+
+sourceSets {
+	main {
+		resources.srcDirs = ['src/main/java', 'src/main/resources']
+	}
 }
